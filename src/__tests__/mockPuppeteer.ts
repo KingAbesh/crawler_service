@@ -21,7 +21,7 @@ export const stubPage = {
   ): Promise<ElementHandle[] | typeof selector> {
     return Promise.resolve([]);
   },
-  wait(time: number) {
+  waitForTimeout(time: number) {
     return Promise.resolve(time);
   },
 } as unknown as Page;
@@ -35,6 +35,9 @@ export const stubBrowser = {
   },
   on() {
     return Promise.resolve();
+  },
+  process() {
+    return { pid: null };
   },
 } as unknown as Browser;
 
